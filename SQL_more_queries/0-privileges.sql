@@ -1,15 +1,7 @@
--- Create user_0d_1 if it does not exist
-CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+-- Remove users if they exist
+DROP USER IF EXISTS 'user_0d_1'@'localhost';
+DROP USER IF EXISTS 'user_0d_2'@'localhost';
 
--- Grant required privileges
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN,
-PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER,
-CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE,
-REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE,
-ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE,
-CREATE ROLE, DROP ROLE
-ON *.* TO 'user_0d_1'@'localhost';
-
--- Display privileges
+-- List privileges
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
